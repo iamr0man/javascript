@@ -9,7 +9,7 @@ filmApi.getFilms()
 
             const filmItem = new FilmItem(item);
             const character = new Character();
-    
+
             filmsList.insertAdjacentHTML('beforeend', filmApi.buildCard(item));
 
             Promise.all(
@@ -18,8 +18,8 @@ filmApi.getFilms()
                 .map(url => {
                     return character.getCharacters(url);
                 })
-
-            ).then(charRes => {
+                ).then(charRes => {
+                
                 const actors = charRes.map(item => new CharacterItem(item));
 
                 filmsList.lastElementChild.insertAdjacentHTML('beforeend', character.buildHTML(actors))

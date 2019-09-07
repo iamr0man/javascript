@@ -11,8 +11,8 @@ class Film extends Api {
                 })            
     }
 
-    buildCard(e,film){
-        return e.innerHTML += `
+    buildCard(film){
+        return `
         <div class='card card-body mb-3'>
             <h4>${film.title} <span class="text-primary">(${film.episode_id})</span></h4>
             <small>About: ${film.opening_crawl}</small>
